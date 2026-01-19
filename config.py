@@ -25,8 +25,26 @@ GETRO_BOARDS = {
         "platform": "consider",
         "enabled": True,
     },
+    "a16z_crypto": {
+        "name": "a16z Crypto Portfolio",
+        "base_url": "https://jobs.a16z.com",
+        "platform": "consider",
+        "enabled": True,
+    },
+    "bain_capital_crypto": {
+        "name": "Bain Capital Crypto Portfolio",
+        "base_url": "https://jobs.baincapitalcrypto.com",
+        "platform": "consider",
+        "enabled": True,
+    },
     
     # ===== Getro 平台 =====
+    "coinbase_ventures": {
+        "name": "Coinbase Ventures Portfolio",
+        "base_url": "https://coinbase.getro.com",
+        "platform": "getro",
+        "enabled": True,
+    },
     "multicoin": {
         "name": "Multicoin Capital Portfolio",
         "base_url": "https://jobs.multicoin.capital",
@@ -45,12 +63,6 @@ GETRO_BOARDS = {
         "platform": "getro",
         "enabled": True,
     },
-    "electric": {
-        "name": "Electric Capital Portfolio",
-        "base_url": "https://jobs.electriccapital.com",
-        "platform": "getro",
-        "enabled": True,
-    },
     "blockchain_capital": {
         "name": "Blockchain Capital Portfolio",
         "base_url": "https://jobs.blockchaincapital.com",
@@ -60,12 +72,6 @@ GETRO_BOARDS = {
     "pantera": {
         "name": "Pantera Capital Portfolio",
         "base_url": "https://jobs.panteracapital.com",
-        "platform": "getro",
-        "enabled": True,
-    },
-    "galaxy": {
-        "name": "Galaxy Ventures Portfolio",
-        "base_url": "https://venturecareers.galaxy.com",
         "platform": "getro",
         "enabled": True,
     },
@@ -81,6 +87,36 @@ GETRO_BOARDS = {
         "platform": "getro",
         "enabled": True,
     },
+    "delphi": {
+        "name": "Delphi Digital Portfolio",
+        "base_url": "https://jobs.delphiventures.io",
+        "platform": "getro",
+        "enabled": True,
+    },
+    "hashed": {
+        "name": "Hashed Portfolio",
+        "base_url": "https://jobs.hashed.com",
+        "platform": "getro",
+        "enabled": True,
+    },
+    "archetype": {
+        "name": "Archetype Portfolio",
+        "base_url": "https://jobs.archetype.fund",
+        "platform": "getro",
+        "enabled": True,
+    },
+    "electric": {
+        "name": "Electric Capital Portfolio",
+        "base_url": "https://jobs.electriccapital.com",
+        "platform": "getro",
+        "enabled": True,
+    },
+    "galaxy": {
+        "name": "Galaxy Ventures Portfolio",
+        "base_url": "https://venturecareers.galaxy.com",
+        "platform": "getro",
+        "enabled": True,
+    },
     "1kx": {
         "name": "1kx Portfolio",
         "base_url": "https://jobs.1kx.network",
@@ -89,14 +125,6 @@ GETRO_BOARDS = {
     },
 }
 
-# ============== 其他数据源 ==============
-OTHER_SOURCES = {
-    "web3career": {
-        "name": "Web3.career",
-        "url": "https://web3.career/non-tech-jobs",
-        "enabled": True,
-    },
-}
 
 # ============== 职位过滤配置 ==============
 # 目标职位类型（标题必须包含至少一个关键词）
