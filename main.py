@@ -11,7 +11,7 @@ import asyncio
 from datetime import datetime
 
 import config
-from scrapers import create_getro_scrapers, create_web3career_scraper, Job
+from scrapers import create_getro_scrapers, Job
 from filters import filter_jobs
 from storage import StorageManager
 from notifier import TelegramNotifier
@@ -45,16 +45,6 @@ def collect_all_jobs() -> tuple[list[Job], list[str]]:
         if jobs:
             all_jobs.extend(jobs)
             sources.append(scraper.source_name)
-    
-    # 创建 web3.career 爬虫
-    try:
-        web3career_scraper = create_web3career_scraper()
-        jobs = web3career_scraper.scrape()
-        if jobs:
-            all_jobs.extend(jobs)
-            sources.append(web3career_scraper.source_name)
-    except Exception as e:
-        logging.warning(f"Failed to scrape web3.career: {e}")
     
     return all_jobs, sources
 
