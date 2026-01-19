@@ -28,7 +28,6 @@ __all__ = [
     "AshbyScraper",
     "LeverScraper",
     "WorkableScraper",
-    "Web3CareerScraper",
     "create_getro_scrapers",
     "create_vc_portfolio_scrapers",
     "create_web3career_scraper",
