@@ -4,20 +4,32 @@
 
 ## ✨ 功能特点
 
-- ✅ 监控 10+ 顶级 Crypto VC 的 Portfolio Job Boards
+- ✅ 监控 **60+ 顶级加密公司和VC**的Portfolio职位
 - ✅ 智能过滤：只推送投资/研究/战略/运营/BD 类岗位
 - ✅ 自动排除：工程开发类、财务、法务、HR、销售类岗位
 - ✅ 新职位检测：对比历史数据，只推送新增职位
 - ✅ Telegram 实时推送
 - ✅ 支持 GitHub Actions 免费定时运行（无需服务器）
-- ✅ 可扩展架构：轻松添加新数据源
+- ✅ 稳定可靠：通过官方API抓取，排除过时聚合平台
+
+## 📝 更新日志
+
+### 2025-02-06
+- ✅ 移除 `web3.career` 聚合器（信息易过时，不够准确）
+- ✅ 优化爬虫架构，专注可靠的官方API数据源
+- ✅ 当前覆盖 **66个数据源**：
+  - 17个顶级VC Portfolio Job Boards
+  - 49个顶级加密公司（Greenhouse/Ashby/Lever/Workable）
+- ✅ 保留核心功能：GitHub Actions自动运行 + Telegram推送
 
 ## 📊 数据源
 
+监控 **60+ 顶级加密公司和VC投资的公司**，通过可靠的API抓取职位数据：
+
 ### Crypto VC Portfolio Job Boards
 
-| VC | Job Board | 说明 |
-|---|---|---|
+| VC/机构 | Job Board | 说明 |
+|---------|-----------|------|
 | Paradigm | jobs.paradigm.xyz | 顶级 Crypto VC |
 | Multicoin Capital | jobs.multicoin.capital | 亚洲+美国项目 |
 | Polychain Capital | jobs.polychain.capital | 老牌 Crypto VC |
@@ -27,12 +39,21 @@
 | Pantera Capital | jobs.panteracapital.com | 最大的 Crypto 基金 |
 | Galaxy Ventures | venturecareers.galaxy.com | Galaxy Digital |
 | Framework Ventures | jobs.framework.ventures | DeFi 专注 |
+| a16z crypto | jobs.a16z.com | Andreessen Horowitz |
+| Hashed | jobs.hashed.com | 韩国头部VC |
+| 1kx | jobs.1kx.network | DeFi专注 |
+| Variant | jobs.variant.fund | 新锐Crypto VC |
+| Delphi Digital | jobs.delphiventures.io | 研究驱动 |
 
-### 聚合平台
+### 顶级加密公司
 
-| 平台 | 说明 |
-|---|---|
-| web3.career | 最大的 Web3 招聘聚合平台 |
+包含投资组合中的顶级公司，如：
+- **DeFi**: Uniswap, dYdX, OpenSea, Aave, Compound, Chainlink, 1inch
+- **Layer 1/2**: Solana Labs, Aptos, Sui, StarkWare, Arbitrum, Optimism, Scroll
+- **交易所**: Coinbase, Kraken, Gemini, OKX
+- **基础设施**: Alchemy, Fireblocks, Chainalysis, Celestia
+
+> 📌 **技术说明**: 所有数据源通过官方API（Greenhouse, Ashby, Lever, Workable）抓取，确保稳定性和可靠性。聚合平台数据（如web3.career）已被移除，因其信息易过时。
 
 ## 🎯 监控的职位类型
 
@@ -177,8 +198,7 @@ crypto-job-monitor/
 ├── scrapers/               # 爬虫模块
 │   ├── __init__.py
 │   ├── base.py             # 爬虫基类和 Job 数据模型
-│   ├── getro.py            # Getro 平台通用爬虫
-│   └── web3career.py       # web3.career 爬虫
+│   └── getro.py            # 各平台爬虫（Greenhouse, Ashby, Lever, Workable）
 ├── filters/                # 过滤器模块
 │   ├── __init__.py
 │   └── job_filter.py       # 职位过滤逻辑
